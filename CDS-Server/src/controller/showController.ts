@@ -6,9 +6,9 @@ const getHomeShows = async (req: Request, res: Response) => {
 };
 
 const getShowByGenre = async (req: Request, res: Response) => {
-  const { genreId } = req.query;
-  const data = await showService.getShowByGenre(Number(genreId));
-  return res.status(200).json({ status: 200, message: "장르별 조회 성공", data });
+    const { genreId } = req.query;
+    const data = await showService.getShowByGenre(Number(genreId));
+    return res.status(200).json({ status: 200, message: "장르별 조회 성공", data });
 };
   
 
