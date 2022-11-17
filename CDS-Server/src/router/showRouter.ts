@@ -13,7 +13,7 @@ const router: Router = Router();
 router.get("/show", showController.getAllShows);
 
 //* 공연 상세 조회 - GET /show/:id
-// router.patch('/show/:id', userController.updateUser);
+router.get('/show/:showId', showController.getShowById);
 
 //* 공연 회차(스케줄) 조회 - GET /schedule/:showId
 // router.delete('/schedule/:showId', userController.deleteUser);

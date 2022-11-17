@@ -17,12 +17,43 @@ const getAllShows = async () => {
     });
     const data = {
         showList: showList
-    }
+    };
     return data;
 };
 
+//* 공연 상세 조회
+const getShowById = async (showId: number) => {
+    const show = await prisma.show.findUnique({
+        where: { id: showId },
+        select: {
+            id: true,
+            title: true,
+            imageURL: true,
+            isExclusive: true,
+            showType: true,
+            ageLimit: true,
+            showStartAt: true,
+            showEndAt: true,
+            runningTime: true,
+            showTimeDiscription: true,
+            place: true,
+            vipPrice: true,
+            rPrice: true,
+            sPrice: true,
+            aPrice: true,
+            castScheduleImageURL: true,
+            likeCount: true
+        }
+    });
+    const data = {
+        show: show
+    };
+    return data;
+}
+
 const showService = {
     getAllShows,
+    getShowById
 };
 
 export default showService;
