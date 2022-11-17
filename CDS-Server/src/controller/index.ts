@@ -1,1 +1,3 @@
-export { default as userController } from "./userController";
+export { default as showController } from "./showController";
+export { default as scheduleController } from "./scheduleController";
+
