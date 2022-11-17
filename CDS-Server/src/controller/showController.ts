@@ -14,8 +14,8 @@ const getAllShows = async (req: Request, res: Response) => {
 const getShowById = async (req: Request, res: Response) => {
     const { showId } = req.params;
     const data = await showService.getShowById(+showId);
-
-    if (!data) {
+    
+    if (!data.show) {
         return res.status(404).json({ status: 404, message: "해당 공연이 없습니다." });
     }
     
