@@ -4,15 +4,15 @@ import { showController } from "../controller";
 const router: Router = Router();
 
 //* 홈 티켓 조회 - GET /show/home
-// router.get('/show/home', userController.getUserById);
+router.get('/home', showController.getHomeShows);
 
-//* 홈 장르별 공연 조회 - GET /genre?genreId=3
-// router.post('/genre?genreId=3', userController.createUser);
+//* 홈 장르별 공연 조회 - GET /show/genre?genreId=3
+router.get('/genre', showController.getShowByGenre);
 
 //* 공연 전체 조회 - GET /show
-router.get("/show", showController.getAllShows);
+router.get("/", showController.getAllShows);
 
 //* 공연 상세 조회 - GET /show/:id
-router.get('/show/:showId', showController.getShowById);
+router.get('/:showId', showController.getShowById);
 
 export default router;

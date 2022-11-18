@@ -1,2 +1,2 @@
 export { default as showController } from "./showController";
-export { default as scheduleController } from "./scheduleController"
+export { default as scheduleController } from "./scheduleController";
