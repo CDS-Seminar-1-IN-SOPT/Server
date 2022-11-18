@@ -8,32 +8,34 @@ datasource db {
 }
 
 model Schedule {
-  id      Int       @id @unique @default(autoincrement())
-  showId  Int?
-  startAt DateTime? @db.Timestamp(6)
-  cast    String?   @db.VarChar(100)
+  id      Int      @id @unique @default(autoincrement())
+  showId  Int
+  startAt DateTime @db.Timestamp(6)
+  cast    String   @db.VarChar(100)
+  Show    Show     @relation(fields: [showId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "schedule_show_id_fk")
 }
 
 model Show {
-  id                   Int       @id @unique @default(autoincrement())
-  title                String?   @db.VarChar(30)
-  imageURL             String?   @db.VarChar(500)
-  isExclusive          Boolean?
-  genre                Int?
-  showType             Int?
-  ageLimit             String?   @db.VarChar(10)
-  showStartAt          DateTime? @db.Timestamp(6)
-  showEndAt            DateTime? @db.Timestamp(6)
-  reservationStartAt   DateTime? @db.Timestamp(6)
-  reservationEndAt     DateTime? @db.Timestamp(6)
-  runningTime          String?   @db.VarChar(50)
-  showTimeDiscription  String?   @db.VarChar(200)
-  place                String?   @db.VarChar(100)
-  vipPrice             Int?
-  rPrice               Int?
-  sPrice               Int?
-  aPrice               Int?
-  castScheduleImageURL String?   @db.VarChar(500)
-  likeCount            Int?
+  id                   Int        @id @unique @default(autoincrement())
+  title                String     @db.VarChar(30)
+  imageURL             String     @db.VarChar(500)
+  isExclusive          Boolean
+  genre                Int
+  showType             Int
+  ageLimit             String     @db.VarChar(10)
+  showStartAt          DateTime   @db.Timestamp(6)
+  showEndAt            DateTime   @db.Timestamp(6)
+  reservationStartAt   DateTime   @db.Timestamp(6)
+  reservationEndAt     DateTime   @db.Timestamp(6)
+  runningTime          String     @db.VarChar(50)
+  showTimeDiscription  String     @db.VarChar(200)
+  place                String     @db.VarChar(100)
+  vipPrice             Int
+  rPrice               Int
+  sPrice               Int
+  aPrice               Int
+  castScheduleImageURL String     @db.VarChar(500)
+  likeCount            Int
   discountRate         Int?
+  Schedule             Schedule[]
 }

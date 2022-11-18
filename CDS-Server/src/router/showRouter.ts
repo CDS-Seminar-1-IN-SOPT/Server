@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { userController } from "../controller";
+import { showController } from "../controller";
 
 const router: Router = Router();
 
@@ -10,12 +10,9 @@ const router: Router = Router();
 // router.post('/genre?genreId=3', userController.createUser);
 
 //* 공연 전체 조회 - GET /show
-// router.get('/show', userController.getAllUser);
+router.get("/show", showController.getAllShows);
 
 //* 공연 상세 조회 - GET /show/:id
-// router.patch('/show/:id', userController.updateUser);
-
-//* 공연 회차(스케줄) 조회 - GET /schedule/:showId
-// router.delete('/schedule/:showId', userController.deleteUser);
+router.get('/show/:showId', showController.getShowById);
 
 export default router;
