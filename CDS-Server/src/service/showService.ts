@@ -123,7 +123,7 @@ const getShowById = async (showId: number) => {
 
 const showService = {
     getHomeShows,
-    getShowByGenre
+    getShowByGenre,
     getAllShows,
     getShowById
 };

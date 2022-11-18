@@ -45,7 +45,7 @@ const getShowById = async (req: Request, res: Response) => {
 }
 const showController = {
     getHomeShows,
-    getShowByGenre
+    getShowByGenre,
     getAllShows,
     getShowById,
 };
