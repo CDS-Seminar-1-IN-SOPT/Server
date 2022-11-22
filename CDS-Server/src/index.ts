@@ -1,7 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
 import router from "./router";
-import showRouter from "./router/showRouter";
-import scheduleRouter from "./router/scheduleRouter";
 import cors from 'cors';
 
 const app = express(); // express 객체 받아옴
